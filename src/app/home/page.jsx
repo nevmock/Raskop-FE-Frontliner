@@ -1,4 +1,5 @@
 "use client";
+import Footer from "@/components/footer/Footer";
 import InputField from "@/components/forms/InputField";
 import SearchInput from "@/components/forms/SearchInput";
 import SelectInput from "@/components/forms/SelectInput";
@@ -93,6 +94,7 @@ const HomePage = () => {
         </div>
         <div className="bg-gradient-to-b from-blue-50 to-transparent w-full h-full absolute top-0 left-0 z-0"></div>
       </section>
+      <Footer />
 
       {/* <SearchInput
         id={"search"}
