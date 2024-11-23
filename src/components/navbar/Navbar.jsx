@@ -145,12 +145,12 @@ const Navbar = () => {
                     </div>
                   )}
                 </div>
-                <Link href="/news">
+                <Link href="/reservation">
                   <li className="font-medium p-4 md:hover:underline md:hover:underline-offset-2 text-white ">
                     Reservasi
                   </li>
                 </Link>
-                <Link href="/projects">
+                <Link href="/menu">
                   <li className="font-medium p-4 md:hover:underline md:hover:underline-offset-2 text-white">
                     Menu
                   </li>
