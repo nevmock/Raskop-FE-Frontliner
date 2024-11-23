@@ -61,7 +61,7 @@ const Navbar = () => {
     <>
       <nav
         ref={navOutside}
-        className="fixed top-0 inset-x-0 z-50 border-b-[1px] transition-all duration-300 bg-white"
+        className="fixed top-0 inset-x-0 z-50 border-b-[1px] transition-all duration-300 bg-green-main"
       >
         <div className="w-full xl:max-w-[1300px] lg:max-w-5xl md:max-w-3xl sm:max-w-xl max-w-md sm:px-0 px-5 mx-auto">
           {/* Desktop menu */}
@@ -81,12 +81,12 @@ const Navbar = () => {
                 {/* Dropdown menu di ukuran deskstop */}
                 <div className="relative">
                   <button
-                    className="flex flex-row items-center p-4 font-medium md:hover:underline md:hover:underline-offset-2 text-[#6B6B6B] hover:text-blue-700"
+                    className="flex flex-row items-center p-4 font-medium md:hover:underline md:hover:underline-offset-2 text-white "
                     onClick={toggleDropdown}
                   >
                     About Us
                     <svg
-                      className={`ml-2 transition duration-300 ease-in-out hover:fill-blue-700 ${
+                      className={`ml-2 transition duration-300 ease-in-out ${
                         isDropdownOpen
                           ? "transform rotate-180 ease-in-out duration-400"
                           : ""
@@ -97,7 +97,7 @@ const Navbar = () => {
                       viewBox="0 0 40 40"
                     >
                       <path
-                        fill="#6b6b6b"
+                        fill="#ddd"
                         d="M4.659 11.833h30.682L20 32.167z"
                       ></path>
                     </svg>
@@ -108,7 +108,7 @@ const Navbar = () => {
                         <li className="mx-2 mt-2">
                           <Link
                             href="/about"
-                            className="block font-medium px-7 py-[5px] rounded-[10px] cursor-pointer text-[#6B6B6B] hover:bg-blue-200"
+                            className="block font-medium px-7 py-[5px] rounded-[10px] cursor-pointer text-[#6B6B6B] "
                             onClick={(event) => {
                               toggleNavbar();
                               setIsDropdownOpen(false);
@@ -119,7 +119,7 @@ const Navbar = () => {
                         </li>
                         <li className="mx-2 mt-2">
                           <div
-                            className="block font-medium px-7 py-[5px] rounded-[10px] cursor-pointer text-[#6B6B6B] hover:bg-blue-200"
+                            className="block font-medium px-7 py-[5px] rounded-[10px] cursor-pointer text-[#6B6B6B] "
                             onClick={(event) => {
                               toggleNavbar();
                               setIsDropdownOpen(false);
@@ -131,7 +131,7 @@ const Navbar = () => {
                         </li>
                         <li className="mt-2 mx-2 mb-[8px]">
                           <div
-                            className="block font-medium px-7 py-[5px] rounded-[10px] cursor-pointer text-[#6B6B6B] hover:bg-blue-200"
+                            className="block font-medium px-7 py-[5px] rounded-[10px] cursor-pointer text-[#6B6B6B] "
                             onClick={(event) => {
                               toggleNavbar();
                               scrollToContact();
@@ -146,12 +146,12 @@ const Navbar = () => {
                   )}
                 </div>
                 <Link href="/news">
-                  <li className="font-medium p-4 md:hover:underline md:hover:underline-offset-2 text-[#6B6B6B] hover:text-blue-700">
+                  <li className="font-medium p-4 md:hover:underline md:hover:underline-offset-2 text-white ">
                     Reservasi
                   </li>
                 </Link>
                 <Link href="/projects">
-                  <li className="font-medium p-4 md:hover:underline md:hover:underline-offset-2 text-[#6B6B6B] hover:text-blue-700">
+                  <li className="font-medium p-4 md:hover:underline md:hover:underline-offset-2 text-white">
                     Menu
                   </li>
                 </Link>
@@ -171,7 +171,7 @@ const Navbar = () => {
               >
                 <path
                   fill="none"
-                  stroke="#205290"
+                  stroke="#ddd"
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth={4}
@@ -184,7 +184,7 @@ const Navbar = () => {
           <div
             className={
               isClick
-                ? "fixed w-[65%] md:hidden h-screen flex flex-col flex-start left-0 top-0 p-5 sm:p-10 ease-in duration-400 transition-all bg-blue-700"
+                ? "fixed w-[65%] md:hidden h-screen flex flex-col flex-start left-0 top-0 p-5 sm:p-10 ease-in duration-400 transition-all bg-green-main"
                 : "fixed left-[-100%] top-0 p-10 ease-out duration-400 transition-all"
             }
           >
@@ -218,7 +218,7 @@ const Navbar = () => {
                   >
                     <p className="font-medium">About Us </p>
                     <svg
-                      className={`ml-4 w-[28px] h-[14px] transition duration-300 ease-in-out hover:fill-blue-700 ${
+                      className={`ml-4 w-[28px] h-[14px] transition duration-300 ease-in-out  ${
                         isDropdownOpen
                           ? "transform rotate-180 ease-in-out duration-400"
                           : ""
