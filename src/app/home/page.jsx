@@ -10,7 +10,7 @@ const HomePage = () => {
     <div>
       <Navbar />
       {/* Hero Section */}
-      <div className="relative w-full h-screen -mb-36 -mt-24">
+      <div className="relative w-full h-[80vh] md:h-screen -mb-24 md:-mb-36 -mt-16 md:-mt-24">
         <Image
           src="/assets/images/bg-raskop.png"
           alt="Background"
@@ -44,7 +44,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="p-4">
-              <p className="text-sm text-gray-600">
+              <p className="text-md text-gray-600">
                 Dengan kapasitas maksimal 15 - 30 orang dan bisa request untuk
                 lesehan atau dengan meja dan kursi, minimal order 70% dari
                 jumlah orang.
@@ -72,7 +72,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="p-4">
-              <p className="text-sm text-gray-600">
+              <p className="text-md text-gray-600">
                 Dengan kapasitas maksimal 40 orang dengan minimal order 70% dari
                 jumlah orang.
               </p>
