@@ -8,6 +8,7 @@ const nextConfig = {
   output: process.env.NEXT_PUBLIC_OUTPUT,
   assetPrefix: process.env.NEXT_PUBLIC_ASSET_PREFIX,
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+  distDir: 'out',
 };
 
 export default nextConfig;
