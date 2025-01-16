@@ -1,6 +1,6 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col items-center md:items-start md:flex-row justify-between">
           <div className="flex items-center space-x-3">
             <Image
-              src="/assets/logo/Rasakopi-logo.png"
+              src="assets/logo/Rasakopi-logo.png"
               alt="Logo Rasa Kopi"
               width={40}
               height={40}
@@ -46,7 +46,7 @@ const Footer = () => {
         <hr className="my-6 border-gray-400" />
         <div className="text-center text-sm">
           <p>
-            © 2024{" "}
+            © 2024{' '}
             <Link href="/" className="hover:underline font-bold">
               Rasa Kopi
             </Link>

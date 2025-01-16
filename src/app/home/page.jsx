@@ -1,9 +1,9 @@
-"use client";
-import React from "react";
-import Navbar from "@/components/navbar/Navbar";
-import Footer from "@/components/footer/Footer";
-import Image from "next/image";
-import Location from "@/components/location/Location";
+'use client';
+import React from 'react';
+import Navbar from '@/components/navbar/Navbar';
+import Footer from '@/components/footer/Footer';
+import Image from 'next/image';
+import Location from '@/components/location/Location';
 
 const HomePage = () => {
   return (
@@ -12,7 +12,7 @@ const HomePage = () => {
       {/* Hero Section */}
       <div className="relative w-full h-[80vh] md:h-screen -mb-24 md:-mb-36 -mt-16 md:-mt-24">
         <Image
-          src="/assets/images/bg-raskop.png"
+          src="assets/images/bg-raskop.png"
           alt="Background"
           layout="fill"
           objectFit="contain"
@@ -28,7 +28,7 @@ const HomePage = () => {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="relative h-80">
               <Image
-                src="/assets/images/DALAM.jpg"
+                src="assets/images/DALAM.jpg"
                 alt="Ruangan Indoor"
                 layout="fill"
                 objectFit="cover"
@@ -56,7 +56,7 @@ const HomePage = () => {
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
             <div className="relative h-80">
               <Image
-                src="/assets/images/LUAR.jpg"
+                src="assets/images/LUAR.jpg"
                 alt="Ruangan Outdoor"
                 layout="fill"
                 objectFit="cover"

@@ -1,7 +1,7 @@
-"use client";
-import React, { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
+'use client';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,7 +17,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <Image
-            src="/assets/logo/Rasakopi-logo.png"
+            src="assets/logo/Rasakopi-logo.png"
             alt="Logo Rasa Kopi"
             width={40}
             height={40}
