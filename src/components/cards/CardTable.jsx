@@ -1,19 +1,19 @@
-import Image from 'next/image';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 const CardTable = ({
-  label = 'Table Number I',
-  location = 'Indoors',
+  label = "Table Number I",
+  location = "Indoors",
   chairs = 6,
   sofa = 6,
   table = 6,
   people = 6,
-  idTable = '1',
-  image = 'assets/images/tables/table-number-1.png',
+  idTable = "1",
+  image = "assets/images/tables/table-number-1.png",
 }) => {
   return (
     <div class="w-full max-w-sm  ">
-      <a href={`${idTable}`}>
+      <a href={`/reservation/${idTable}`}>
         {/* <div className="relative w-full h-full  rounded-t-lg bg-red-500"> */}
         <Image
           width={500}
@@ -27,7 +27,7 @@ const CardTable = ({
         {/* </div> */}
       </a>
       <div class="pb-5">
-        <a href={`${idTable}`}>
+        <a href={`/reservation/${idTable}`}>
           <h5 class="text-xl font-semibold tracking-tight text-gray-900 ">
             {label}
           </h5>
@@ -110,7 +110,7 @@ const CardTable = ({
             </div>
           </div>
           <a
-            href={`${idTable}`}
+            href={`/reservation/${idTable}`}
             class="text-white-broken bg-green-main hover:bg-[#0e2a23] focus:ring-4 focus:outline-none focus:ring-[#29a985] font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Reserve Now
