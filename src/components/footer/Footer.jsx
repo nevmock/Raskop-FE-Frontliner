@@ -4,7 +4,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-green-main text-white">
+    <footer className="bg-green-main text-white-broken">
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 py-6 md:py-10">
         {/* Logo dan tulisan */}
         <div className="flex flex-col items-center md:items-start md:flex-row justify-between">

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
 const Location = () => {
   return (
@@ -9,8 +9,8 @@ const Location = () => {
         {/* Description */}
         <div className="mr-0 lg:mr-20">
           <h1 className="text-5xl font-extrabold text-green-main">
-            <span className="bg-green-main text-white px-3">RASA</span>
-            <span className="bg-[#E08756] text-white px-3">KOPI</span>
+            <span className="bg-green-main text-white-broken px-3">RASA</span>
+            <span className="bg-[#E08756] text-white-broken px-3">KOPI</span>
           </h1>
           <p className="mt-8 text-md text-gray-700 text-justify">
             Selamat datang di kedai RASA KOPI, tempat di mana setiap tegukan
