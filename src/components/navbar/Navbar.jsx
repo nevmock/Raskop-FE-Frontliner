@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 bg-green-main text-white shadow-lg">
+    <nav className="fixed top-0 inset-x-0 z-50 bg-green-main text-white-broken shadow-lg">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -51,7 +51,7 @@ const Navbar = () => {
 
         {/* Hamburger Icon for Mobile */}
         <button
-          className="block md:hidden text-white focus:outline-none"
+          className="block md:hidden text-white-broken focus:outline-none"
           onClick={toggleMenu}
         >
           <svg
@@ -70,7 +70,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="bg-green-main text-white md:hidden">
+        <div className="bg-green-main text-white-broken md:hidden">
           <ul className="flex flex-col space-y-4 p-4 text-sm font-medium">
             <li>
               <Link

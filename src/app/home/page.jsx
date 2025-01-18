@@ -7,7 +7,7 @@ import Location from '@/components/location/Location';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="bg-white-broken">
       <Navbar />
       {/* Hero Section */}
       <div className="relative w-full h-[80vh] md:h-screen -mb-24 md:-mb-36 -mt-16 md:-mt-24">
@@ -22,10 +22,10 @@ const HomePage = () => {
       </div>
 
       {/* Rooms Section */}
-      <div className="container mx-auto mb-48 px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="container mx-auto mb-48 px-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
           {/* Room Indoor */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-white-broken rounded-lg shadow-lg overflow-hidden">
             <div className="relative h-80">
               <Image
                 src="assets/images/DALAM.jpg"
@@ -35,10 +35,10 @@ const HomePage = () => {
                 className="w-full h-full"
               />
               <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-end p-4">
-                <h2 className="text-white text-4xl font-bold">
+                <h2 className="text-white-broken text-4xl font-bold">
                   Ruangan Indoor
                 </h2>
-                <button className="mt-2 bg-green-main text-white w-36 h-10 rounded-lg shadow hover:bg-green-700 transition">
+                <button className="mt-2 bg-green-main text-white-broken w-36 h-10 rounded-lg shadow hover:bg-green-700 transition">
                   Reservasi
                 </button>
               </div>
@@ -53,7 +53,7 @@ const HomePage = () => {
           </div>
 
           {/* Room Outdoor */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+          <div className="bg-white-broken rounded-lg shadow-lg overflow-hidden">
             <div className="relative h-80">
               <Image
                 src="assets/images/LUAR.jpg"
@@ -63,10 +63,10 @@ const HomePage = () => {
                 className="w-full h-full"
               />
               <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-end p-4">
-                <h2 className="text-white text-4xl font-bold">
+                <h2 className="text-white-broken text-4xl font-bold">
                   Ruangan Outdoor
                 </h2>
-                <button className="mt-2 bg-green-main text-white w-36 h-10 rounded-lg shadow hover:bg-green-700 transition">
+                <button className="mt-2 bg-green-main text-white-broken w-36 h-10 rounded-lg shadow hover:bg-green-700 transition">
                   Reservasi
                 </button>
               </div>
