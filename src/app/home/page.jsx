@@ -1,28 +1,28 @@
-'use client';
-import React from 'react';
-import Navbar from '@/components/navbar/Navbar';
-import Footer from '@/components/footer/Footer';
-import Image from 'next/image';
-import Location from '@/components/location/Location';
+"use client";
+import React from "react";
+import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/footer/Footer";
+import Image from "next/image";
+import Location from "@/components/location/Location";
 
 const HomePage = () => {
   return (
     <div className="bg-white-broken">
       <Navbar />
       {/* Hero Section */}
-      <div className="relative w-full h-[80vh] md:h-screen -mb-24 md:-mb-36 -mt-16 md:-mt-24">
+      <div className="relative w-full h-96 -mt-16 mb-4 md:h-[40vh] lg:h-[40vh] xl:h-[80vh]">
         <Image
           src="assets/images/bg-raskop.png"
           alt="Background"
           layout="fill"
-          objectFit="contain"
+          objectFit="contain" // Mengisi seluruh area
           priority
           className="object-center"
         />
       </div>
 
       {/* Rooms Section */}
-      <div className="container mx-auto mb-48 px-4 ">
+      <div className="container mx-auto mb-48 -mt-32 px-4 ">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
           {/* Room Indoor */}
           <div className="bg-white-broken rounded-lg shadow-lg overflow-hidden">
