@@ -1,8 +1,9 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import React from 'react';
+import Image from "next/image";
+import React from "react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-green-main text-white-broken">
       <div className="w-full max-w-screen-xl mx-auto px-4 md:px-8 py-6 md:py-10">
@@ -17,42 +18,12 @@ const Footer = () => {
             />
             <span className="text-xl font-semibold">RASA KOPI</span>
           </div>
-          {/* Navigation Links */}
-          <ul className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm font-medium mt-6 md:mt-0">
-            <li>
-              <Link href="/" className="hover:underline">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:underline">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:underline">
-                Licensing
-              </Link>
-            </li>
-            <li>
-              <Link href="/" className="hover:underline">
-                Contact
-              </Link>
-            </li>
-          </ul>
+          {/* Copyright Section */}
+          <div className="text-center flex flex-wrap justify-center md:justify-end space-x-6 text-sm font-medium mt-6 md:mt-0">
+            <p>© {currentYear} Rasa Kopi . All Rights Reserved.</p>
+          </div>
         </div>
-
-        {/* Copyright Section */}
         <hr className="my-6 border-gray-400" />
-        <div className="text-center text-sm">
-          <p>
-            © 2024{' '}
-            <Link href="/" className="hover:underline font-bold">
-              Rasa Kopi
-            </Link>
-            . All Rights Reserved.
-          </p>
-        </div>
       </div>
     </footer>
   );

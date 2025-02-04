@@ -1,10 +1,9 @@
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
-import GalleryGrid from "@/components/reservationDetails/GalleryGrid";
-import OrderForm from "@/components/reservationDetails/OrderForm";
-import GeneralFacilities from "@/components/reservationDetails/GeneralFacilities";
-import TableInfo from "@/components/reservationDetails/TableInfo";
-import ReservationPricing from "@/components/reservationDetails/ReservationPricing";
+import GalleryGrid from "@/components/order/GalleryGrid";
+import OrderForm from "@/components/order/OrderForm";
+import GeneralFacilities from "@/components/order/GeneralFacilities";
+import TableInfo from "@/components/order/TableInfo";
 
 // Static paths for dynamic routes
 export async function generateStaticParams() {
@@ -40,18 +39,18 @@ const tableDetails = {
 
 const galleryImages = {
   1: [
-    "/assets/images/tables/table-number-1.png",
-    "/assets/images/tables/table-number-1.png",
-    "/assets/images/tables/table-number-1.png",
-    "/assets/images/tables/table-number-1.png",
-    "/assets/images/tables/table-number-1.png",
+    "assets/images/tables/table-number-1.png",
+    "assets/images/tables/table-number-1.png",
+    "assets/images/tables/table-number-1.png",
+    "assets/images/tables/table-number-1.png",
+    "assets/images/tables/table-number-1.png",
   ],
   2: [
-    "/assets/images/tables/table-number-2.png",
-    "/assets/images/tables/table-number-2.png",
-    "/assets/images/tables/table-number-2.png",
-    "/assets/images/tables/table-number-2.png",
-    "/assets/images/tables/table-number-2.png",
+    "assets/images/tables/table-number-2.png",
+    "assets/images/tables/table-number-2.png",
+    "assets/images/tables/table-number-2.png",
+    "assets/images/tables/table-number-2.png",
+    "assets/images/tables/table-number-2.png",
   ],
 };
 const coffeeShopFacilities = [
@@ -79,7 +78,7 @@ const orders = [
   },
 ];
 
-const DetailReservation = ({ params }) => {
+const OrderPage = ({ params }) => {
   const { id } = params;
   const images = galleryImages[id] || galleryImages[1];
   const tableData = tableDetails[id] || tableDetails[1];
@@ -103,25 +102,15 @@ const DetailReservation = ({ params }) => {
               people={tableData.people}
               description={tableData.description}
             />
-            {/* Reservation Pricing Section */}
-            <ReservationPricing orders={orders} />
+            {/* Facilities Section */}
+            <GeneralFacilities
+              title="Layanan Umum"
+              facilities={coffeeShopFacilities}
+            />
           </div>
-
-          {/* Facilities Section */}
-          <GeneralFacilities
-            title="Layanan Umum"
-            facilities={coffeeShopFacilities}
-          />
 
           {/* Order Form Section */}
-          <div className="mt-12">
-            <h2 className="text-2xl font-bold mb-6 mt-10">Customer Orders</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[...Array(4)].map((_, index) => (
-                <OrderForm key={index} />
-              ))}
-            </div>
-          </div>
+          <OrderForm orders={orders} />
         </div>
       </div>
       <Footer />
@@ -129,4 +118,4 @@ const DetailReservation = ({ params }) => {
   );
 };
 
-export default DetailReservation;
+export default OrderPage;

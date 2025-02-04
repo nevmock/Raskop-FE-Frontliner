@@ -4,25 +4,25 @@ import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
 import Image from "next/image";
 import Location from "@/components/location/Location";
+import Link from "next/link";
 
 const HomePage = () => {
   return (
     <div className="bg-white-broken">
       <Navbar />
       {/* Hero Section */}
-      <div className="relative w-full h-96 -mt-16 mb-4 md:h-[40vh] lg:h-[40vh] xl:h-[80vh]">
+      <div className="relative w-full aspect-[2500/1080] mt-10 md:pt-0 ">
         <Image
           src="assets/images/bg-raskop.png"
           alt="Background"
-          layout="fill"
-          objectFit="contain" // Mengisi seluruh area
+          fill
           priority
-          className="object-center"
+          className="object-cover"
         />
       </div>
 
       {/* Rooms Section */}
-      <div className="container mx-auto mb-48 -mt-32 px-4 ">
+      <div className="container mx-auto mb-48 px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
           {/* Room Indoor */}
           <div className="bg-white-broken rounded-lg shadow-lg overflow-hidden">
@@ -38,9 +38,11 @@ const HomePage = () => {
                 <h2 className="text-white-broken text-4xl font-bold">
                   Ruangan Indoor
                 </h2>
-                <button className="mt-2 bg-green-main text-white-broken w-36 h-10 rounded-lg shadow hover:bg-green-700 transition">
-                  Reservasi
-                </button>
+                <Link href="reservation">
+                  <button className="mt-2 bg-green-main text-white-broken w-36 h-10 rounded-lg shadow hover:bg-green-700 transition">
+                    Reservasi
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="p-4">
@@ -66,9 +68,11 @@ const HomePage = () => {
                 <h2 className="text-white-broken text-4xl font-bold">
                   Ruangan Outdoor
                 </h2>
-                <button className="mt-2 bg-green-main text-white-broken w-36 h-10 rounded-lg shadow hover:bg-green-700 transition">
-                  Reservasi
-                </button>
+                <Link href="reservation">
+                  <button className="mt-2 bg-green-main text-white-broken w-36 h-10 rounded-lg shadow hover:bg-green-700 transition">
+                    Reservasi
+                  </button>
+                </Link>
               </div>
             </div>
             <div className="p-4">

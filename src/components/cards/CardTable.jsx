@@ -10,28 +10,28 @@ const CardTable = ({
   people = 6,
   idTable = "1",
   image = "assets/images/tables/table-number-1.png",
+  isBooked = false,
 }) => {
   return (
     <div class="w-full max-w-sm  ">
-      <a href={`/reservation/${idTable}`}>
-        {/* <div className="relative w-full h-full  rounded-t-lg bg-red-500"> */}
-        <Image
-          width={500}
-          height={500}
-          src={image}
-          alt="Background"
-          objectFit="contain"
-          priority
-          className="object-cover py-5"
-        />
-        {/* </div> */}
-      </a>
+      {/* <a href={`reservation/${idTable}`}> */}
+      {/* <div className="relative w-full h-full  rounded-t-lg bg-red-500"> */}
+      <Image
+        width={500}
+        height={500}
+        src={image}
+        alt="Background"
+        objectFit="contain"
+        priority
+        className="object-cover py-5"
+      />
+      {/* </div> */}
+      {/* </a> */}
       <div class="pb-5">
-        <a href={`/reservation/${idTable}`}>
-          <h5 class="text-xl font-semibold tracking-tight text-gray-900 ">
-            {label}
-          </h5>
-        </a>
+        <h5 class="text-xl font-semibold tracking-tight text-gray-900 ">
+          {label}
+        </h5>
+
         <div class="flex items-center mt-2.5 mb-5">
           <p className="text-[#9A9A9A] font-medium">{location}</p>
         </div>
@@ -109,12 +109,22 @@ const CardTable = ({
               <p className="text-black font-medium">{people}</p>
             </div>
           </div>
-          <a
-            href={`/reservation/${idTable}`}
+
+          <div className="flex items-center gap-1">
+            <span
+              className={`px-3 py-1 text-sm font-medium rounded-lg ${
+                isBooked ? "bg-red-500 text-white" : "bg-green-500 text-white"
+              }`}
+            >
+              {isBooked ? "Booked" : "Available"}
+            </span>
+          </div>
+          {/* <a
+            href={`reservation/${idTable}`}
             class="text-white-broken bg-green-main hover:bg-[#0e2a23] focus:ring-4 focus:outline-none focus:ring-[#29a985] font-medium rounded-lg text-sm px-5 py-2.5 text-center"
           >
             Reserve Now
-          </a>
+          </a> */}
         </div>
       </div>
     </div>

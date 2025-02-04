@@ -13,7 +13,8 @@ const TableInfo = ({
     <div className="col-span-2">
       <h1 className="text-3xl font-bold mb-2">Table Number {tableNumber}</h1>
       <p className="text-gray-500 mb-6 text-lg">{category}</p>
-      <div className="grid grid-cols-4 gap-6 mb-8">
+
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-8">
         {/* Chair */}
         <div className="flex flex-col items-center bg-gray-100 p-6 rounded-lg">
           <svg

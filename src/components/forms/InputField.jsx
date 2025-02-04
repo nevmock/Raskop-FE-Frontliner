@@ -46,14 +46,14 @@ const InputField = ({
           name={name}
           accept={type == "image" ? "image/*" : "*"}
           type={type === "image" ? "file" : type}
-          value={value}
+          value={value || ""}
           onChange={onChange}
           placeholder={placeholder}
           multiple={multiple}
           required={required}
           disabled={disabled}
           readOnly={readOnly}
-          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+          className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
         />
         {validations &&
           validations.map(
