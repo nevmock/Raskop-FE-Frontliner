@@ -83,7 +83,7 @@ const Reservation = () => {
     <div>
       <Toaster position="top-center" />
       <Navbar />
-      <div className="relative w-full pt-16 bg-center bg-no-repeat bg-cover bg-[url('/assets/images/bg-reservasi.jpg')] bg-gray-500 bg-blend-multiply">
+      <div className="relative w-full pt-16 bg-center bg-no-repeat bg-cover bg-[url('assets/images/bg-reservasi.jpg')] bg-gray-500 bg-blend-multiply">
         <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-64">
           <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">
             Atur Reservasi Meja Anda

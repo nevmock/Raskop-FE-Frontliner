@@ -88,9 +88,8 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="/assets/images/menu-raskop.jpeg"
+                href="menu"
                 className="hover:underline"
-                target="_blank"
                 onClick={toggleMenu}
               >
                 Menu
