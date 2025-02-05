@@ -1,7 +1,7 @@
-'use client';
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,11 +39,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link
-              href="/assets/images/menu-raskop.jpeg"
-              className="hover:underline"
-              target="_blank"
-            >
+            <Link href="menu" className="hover:underline">
               Menu
             </Link>
           </li>
