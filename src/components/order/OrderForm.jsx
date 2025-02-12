@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
@@ -18,6 +18,18 @@ const menuOptions = [
   { id: 1, name: "Espresso", price: 20000 },
   { id: 2, name: "Cappuccino", price: 30000 },
   { id: 3, name: "Latte", price: 35000 },
+  { id: 4, name: "Nasi Goreng Abang-Abang", price: 35000 },
+  { id: 5, name: "Mie Goreng Special", price: 30000 },
+  { id: 6, name: "Ayam Geprek", price: 40000 },
+  { id: 7, name: "Iced Americano", price: 25000 },
+  { id: 8, name: "French Fries", price: 20000 },
+  { id: 9, name: "Chicken Wings", price: 35000 },
+  { id: 10, name: "Hot Chocolate", price: 30000 },
+  { id: 11, name: "Matcha Latte", price: 35000 },
+  { id: 12, name: "Pancake", price: 28000 },
+  { id: 13, name: "Milkshake", price: 30000 },
+  { id: 14, name: "Affogato", price: 32000 },
+  { id: 15, name: "Smoothie Bowl", price: 38000 },
 ];
 
 const OrderForm = () => {
@@ -35,6 +47,8 @@ const OrderForm = () => {
   });
 
   const [menu, setMenu] = useState([]);
+  const lastMenuRef = useRef(null); // Simpan referensi untuk elemen terakhir
+  const menuListRef = useRef(null); // Simpan referensi untuk daftar menu
 
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -58,15 +72,25 @@ const OrderForm = () => {
   };
 
   const addMenuItem = () => {
-    setMenu([...menu, { name: "", price: 0, quantity: "" }]); // Default quantity kosong
+    setMenu([...menu, { name: "", price: 0, quantity: "" }]);
   };
 
   const removeMenuItem = (index) => {
     setMenu(menu.filter((_, i) => i !== index));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // Efek untuk fokus ke item terakhir dan scroll ke bawah
+  useEffect(() => {
+    if (lastMenuRef.current) {
+      lastMenuRef.current.focus();
+    }
+    if (menuListRef.current) {
+      menuListRef.current.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  }, [menu.length]);
+
+  // Menghitung total dan DP secara otomatis setiap kali state `menu` berubah
+  useEffect(() => {
     const total = menu.reduce(
       (sum, item) => sum + item.price * (item.quantity || 0),
       0
@@ -79,7 +103,7 @@ const OrderForm = () => {
       total,
       dp,
     }));
-  };
+  }, [menu]);
 
   return (
     <div className="py-10">
@@ -88,7 +112,8 @@ const OrderForm = () => {
           <CardTitle>Formulir Reservasi</CardTitle>
         </CardHeader>
         <CardContent>
-          <form onSubmit={handleSubmit}>
+          {/* Form tidak lagi menggunakan onSubmit karena tombol Pesan dihapus */}
+          <form>
             <div className="space-y-6">
               <div>
                 <Label>Nama Perwakilan</Label>
@@ -142,25 +167,30 @@ const OrderForm = () => {
               {/* List Pemesanan */}
               <div>
                 <Label>List Pemesanan</Label>
-                <div className="space-y-4">
+                <div className="space-y-2 overflow-y-auto max-h-80 border p-2 rounded-lg">
                   {menu.map((item, index) => (
                     <div
                       key={index}
-                      className="flex flex-wrap items-center justify-between gap-4 border-b pb-2 px-2"
+                      className="flex flex-nowrap items-center justify-between gap-x-6 border-b pb-2 px-2 overflow-x-auto"
                     >
                       {/* Pilih Menu */}
-                      <div className="w-full sm:w-1/3">
-                        <Label className="text-sm font-semibold">Menu</Label>
+                      <div className="w-1/3">
+                        <Label className="text-xs sm:text-sm font-semibold">
+                          Menu
+                        </Label>
                         <Select
                           value={item.name}
                           onValueChange={(value) =>
                             handleMenuChange(index, "name", value)
                           }
                         >
-                          <SelectTrigger>
+                          <SelectTrigger
+                            ref={index === menu.length - 1 ? lastMenuRef : null}
+                            className="text-xs sm:text-sm h-9 sm:h-10 px-2"
+                          >
                             <SelectValue placeholder="Pilih Menu" />
                           </SelectTrigger>
-                          <SelectContent>
+                          <SelectContent className="max-h-40 overflow-y-auto">
                             {menuOptions.map((option) => (
                               <SelectItem key={option.id} value={option.name}>
                                 {option.name}
@@ -170,17 +200,22 @@ const OrderForm = () => {
                         </Select>
                       </div>
 
-                      {/* Harga (otomatis) */}
-                      <div className="w-1/2 sm:w-1/3 text-center">
-                        <Label className="text-sm font-semibold">Harga</Label>
-                        <p className="font-bold text-lg">
-                          Rp {item.price.toLocaleString()}
-                        </p>
+                      {/* Harga */}
+                      <div className="w-1/4 text-center">
+                        <Label className="text-xs sm:text-sm font-semibold">
+                          Harga
+                        </Label>
+                        <div className="flex items-center justify-center gap-1 font-bold text-xs sm:text-lg">
+                          <span>Rp</span>
+                          <span>{item.price.toLocaleString()}</span>
+                        </div>
                       </div>
 
                       {/* Input Quantity */}
-                      <div className="w-1/2 sm:w-1/4 text-center">
-                        <Label className="text-sm font-semibold">Jumlah</Label>
+                      <div className="w-1/4 text-center">
+                        <Label className="text-xs sm:text-sm font-semibold">
+                          Jumlah
+                        </Label>
                         <Input
                           type="number"
                           min="0"
@@ -189,23 +224,29 @@ const OrderForm = () => {
                           onChange={(e) =>
                             handleMenuChange(index, "quantity", e.target.value)
                           }
-                          className="text-center no-spinner"
+                          className="text-center text-xs sm:text-sm h-9 sm:h-10 px-2 no-spinner"
                         />
                       </div>
 
                       {/* Hapus Item */}
-                      <Button
-                        type="button"
-                        variant="destructive"
-                        onClick={() => removeMenuItem(index)}
-                        className="mt-2 sm:mt-5"
-                      >
-                        X
-                      </Button>
+                      <div className="flex items-center">
+                        <Button
+                          type="button"
+                          variant="destructive"
+                          onClick={() => removeMenuItem(index)}
+                          className="w-9 h-9 sm:w-10 sm:h-10 mt-5 flex items-center justify-center text-xs"
+                        >
+                          X
+                        </Button>
+                      </div>
                     </div>
                   ))}
                 </div>
-                <Button type="button" className="mt-4" onClick={addMenuItem}>
+                <Button
+                  type="button"
+                  className="mt-4 text-xs sm:text-sm h-9 sm:h-10 px-4"
+                  onClick={addMenuItem}
+                >
                   + Tambah Menu
                 </Button>
               </div>
@@ -243,28 +284,21 @@ const OrderForm = () => {
                   </Button>
                 </div>
               </div>
-
-              {/* Submit Button */}
-              <div className="text-right">
-                <Button type="submit">Pesan</Button>
-              </div>
             </div>
           </form>
 
-          {/* Total & DP */}
-          {formData.total > 0 && (
-            <div className="mt-6 p-4 bg-gray-100 rounded-lg">
-              <p className="font-semibold">
-                Total: Rp {formData.total.toLocaleString()}
-              </p>
-              <p className="font-semibold">
-                DP (50%): Rp {formData.dp.toLocaleString()}
-              </p>
-              <Button className="mt-2 w-full" onClick={() => {}}>
-                Bayar Sekarang
-              </Button>
-            </div>
-          )}
+          {/* Menampilkan Total & DP beserta tombol Bayar Sekarang */}
+          <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+            <p className="font-semibold text-lg">
+              Total: Rp {formData.total.toLocaleString()}
+            </p>
+            <p className="font-semibold text-lg">
+              DP (50%): Rp {formData.dp.toLocaleString()}
+            </p>
+            <Button className="mt-2 w-full" onClick={() => {}}>
+              Bayar Sekarang
+            </Button>
+          </div>
         </CardContent>
       </Card>
     </div>

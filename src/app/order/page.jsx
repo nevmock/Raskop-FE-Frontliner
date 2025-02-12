@@ -40,17 +40,17 @@ const tableDetails = {
 const galleryImages = {
   1: [
     "assets/images/tables/table-number-1.png",
-    "assets/images/tables/table-number-1.png",
-    "assets/images/tables/table-number-1.png",
-    "assets/images/tables/table-number-1.png",
-    "assets/images/tables/table-number-1.png",
+    "assets/images/tables/table-number-2.png",
+    "assets/images/tables/table-number-3.png",
+    "assets/images/tables/table-number-4.png",
+    "assets/images/tables/table-number-5.png",
   ],
   2: [
+    "assets/images/tables/table-number-1.png",
     "assets/images/tables/table-number-2.png",
-    "assets/images/tables/table-number-2.png",
-    "assets/images/tables/table-number-2.png",
-    "assets/images/tables/table-number-2.png",
-    "assets/images/tables/table-number-2.png",
+    "assets/images/tables/table-number-3.png",
+    "assets/images/tables/table-number-4.png",
+    "assets/images/tables/table-number-5.png",
   ],
 };
 const coffeeShopFacilities = [
